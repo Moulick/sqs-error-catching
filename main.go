@@ -14,7 +14,6 @@ import (
 )
 
 func main() {
-
 	cfg, err := config.LoadDefaultConfig(context.TODO())
 	if err != nil {
 		log.Fatalf("unable to get AWS config: %v", err)
@@ -28,13 +27,11 @@ func main() {
 	accountID := *whoami.Account
 
 	sqsClient := sqs.NewFromConfig(cfg)
-
 	_, err = sqsClient.DeleteQueue(context.Background(), &sqs.DeleteQueueInput{
 		QueueUrl: aws.String("https://sqs.eu-central-1.amazonaws.com/" + accountID + "/random-dummy-sqs"),
 	})
-
-	var dne *types.QueueDoesNotExist
 	if err != nil {
+		var dne *types.QueueDoesNotExist
 		if errors.As(err, &dne) {
 			// Queue does not exist
 			fmt.Println("Queue does not exist")

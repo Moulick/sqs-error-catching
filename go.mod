@@ -1,11 +1,12 @@
 module sqs
 
-go 1.21.3
+go 1.20
 
 require (
 	github.com/aws/aws-sdk-go-v2 v1.22.1
 	github.com/aws/aws-sdk-go-v2/config v1.22.0
 	github.com/aws/aws-sdk-go-v2/service/sqs v1.26.0
+	github.com/aws/aws-sdk-go-v2/service/sts v1.25.0
 )
 
 require (
@@ -17,6 +18,5 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.10.1 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sso v1.17.0 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.19.0 // indirect
-	github.com/aws/aws-sdk-go-v2/service/sts v1.25.0 // indirect
 	github.com/aws/smithy-go v1.16.0 // indirect
 )
