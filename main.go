@@ -38,6 +38,7 @@ func main() {
 		if errors.As(err, &dne) {
 			// Queue does not exist
 			fmt.Println("Queue does not exist")
+			// This error is not being caught
 		}
 		log.Fatalf("unable to delete queue: %v", err)
 	}
